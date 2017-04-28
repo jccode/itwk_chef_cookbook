@@ -151,6 +151,90 @@
         "enabled": true,
         "managed": true,
         "make_cache": true
+      },
+      "main": {
+        "cachedir": "/var/cache/yum/$basearch/$releasever",
+        "distroverpkg": "ubuntu-release",
+        "releasever": null,
+        "alwaysprompt": null,
+        "assumeyes": null,
+        "bandwidth": null,
+        "bugtracker_url": null,
+        "clean_requirements_on_remove": null,
+        "color": null,
+        "color_list_available_downgrade": null,
+        "color_list_available_install": null,
+        "color_list_available_reinstall": null,
+        "color_list_available_upgrade": null,
+        "color_list_installed_extra": null,
+        "color_list_installed_newer": null,
+        "color_list_installed_older": null,
+        "color_list_installed_reinstall": null,
+        "color_search_match": null,
+        "color_update_installed": null,
+        "color_update_local": null,
+        "color_update_remote": null,
+        "commands": null,
+        "deltarpm": null,
+        "debuglevel": null,
+        "diskspacecheck": null,
+        "enable_group_conditionals": null,
+        "errorlevel": null,
+        "exactarch": null,
+        "exclude": null,
+        "gpgcheck": true,
+        "group_package_types": null,
+        "groupremove_leaf_only": null,
+        "history_list_view": null,
+        "history_record": null,
+        "history_record_packages": null,
+        "http_caching": null,
+        "installonly_limit": null,
+        "installonlypkgs": null,
+        "installroot": null,
+        "keepalive": null,
+        "keepcache": false,
+        "kernelpkgnames": null,
+        "localpkg_gpgcheck": false,
+        "logfile": "/var/log/yum.log",
+        "max_retries": null,
+        "mdpolicy": null,
+        "metadata_expire": null,
+        "mirrorlist_expire": null,
+        "multilib_policy": null,
+        "obsoletes": null,
+        "overwrite_groups": null,
+        "password": null,
+        "path": "/etc/yum.conf",
+        "persistdir": null,
+        "pluginconfpath": null,
+        "pluginpath": null,
+        "plugins": null,
+        "protected_multilib": null,
+        "protected_packages": null,
+        "proxy": null,
+        "proxy_password": null,
+        "proxy_username": null,
+        "recent": null,
+        "repo_gpgcheck": null,
+        "reposdir": null,
+        "reset_nice": null,
+        "rpmverbosity": null,
+        "showdupesfromrepos": null,
+        "skip_broken": null,
+        "ssl_check_cert_permissions": null,
+        "sslcacert": null,
+        "sslclientcert": null,
+        "sslclientkey": null,
+        "sslverify": null,
+        "syslog_device": null,
+        "syslog_facility": null,
+        "syslog_ident": null,
+        "throttle": null,
+        "timeout": null,
+        "tolerant": false,
+        "tsflags": null,
+        "username": null
       }
     },
     "zypper": {
@@ -391,6 +475,910 @@
         "zone_size": "1m"
       }
     },
+    "openssl": {
+      "restart_services": [
+
+      ]
+    },
+    "postgresql": {
+      "enable_pgdg_apt": false,
+      "enable_pgdg_yum": false,
+      "use_pgdg_packages": false,
+      "server": {
+        "config_change_notify": "restart",
+        "init_package": "upstart",
+        "service_name": "postgresql",
+        "packages": [
+          "postgresql-9.1"
+        ]
+      },
+      "assign_postgres_password": true,
+      "database_name": "template1",
+      "version": "9.1",
+      "dir": "/etc/postgresql/9.1/main",
+      "client": {
+        "packages": [
+          "postgresql-client-9.1",
+          "libpq-dev"
+        ]
+      },
+      "contrib": {
+        "packages": [
+          "postgresql-contrib-9.1"
+        ]
+      },
+      "config": {
+        "listen_addresses": "localhost",
+        "port": 5432,
+        "max_connections": 100,
+        "shared_buffers": "24MB",
+        "log_line_prefix": "%t ",
+        "datestyle": "iso, mdy",
+        "default_text_search_config": "pg_catalog.english",
+        "ssl": true
+      },
+      "pg_hba": [
+        {
+          "type": "local",
+          "db": "all",
+          "user": "postgres",
+          "addr": null,
+          "method": "ident"
+        },
+        {
+          "type": "local",
+          "db": "all",
+          "user": "all",
+          "addr": null,
+          "method": "ident"
+        },
+        {
+          "type": "host",
+          "db": "all",
+          "user": "all",
+          "addr": "127.0.0.1/32",
+          "method": "md5"
+        },
+        {
+          "type": "host",
+          "db": "all",
+          "user": "all",
+          "addr": "::1/128",
+          "method": "md5"
+        }
+      ],
+      "password": {
+
+      },
+      "pg_gem": {
+        "version": null
+      },
+      "pgdg": {
+        "release_apt_codename": "precise",
+        "repo_rpm_url": {
+          "9.6": {
+            "amazon": {
+              "2015": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-6-i386/",
+                  "package": "pgdg-ami201503-96-9.6-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-ami201503-96-9.6-3.noarch.rpm"
+                }
+              }
+            },
+            "centos": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-centos96-9.6-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-6-i386/",
+                  "package": "pgdg-centos96-9.6-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-centos96-9.6-3.noarch.rpm"
+                }
+              }
+            },
+            "redhat": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-redhat96-9.6-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat96-9.6-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat96-9.6-3.noarch.rpm"
+                }
+              }
+            },
+            "oracle": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-oraclelinux96-9.6-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-6-i386/",
+                  "package": "pgdg-oraclelinux96-9.6-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-oraclelinux96-9.6-3.noarch.rpm"
+                }
+              }
+            },
+            "scientific": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-sl96-9.6-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-6-i386/",
+                  "package": "pgdg-sl96-9.6-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-sl96-9.6-3.noarch.rpm"
+                }
+              }
+            },
+            "fedora": {
+              "22": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/fedora/fedora-22-x86_64/",
+                  "package": "pgdg-fedora96-9.6-3.noarch.rpm"
+                }
+              },
+              "23": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/fedora/fedora-23-x86_64/",
+                  "package": "pgdg-fedora96-9.6-3.noarch.rpm"
+                }
+              },
+              "24": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/fedora/fedora-24-x86_64/",
+                  "package": "pgdg-fedora96-9.6-3.noarch.rpm"
+                }
+              },
+              "25": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.6/fedora/fedora-25-x86_64/",
+                  "package": "pgdg-fedora96-9.6-3.noarch.rpm"
+                }
+              }
+            }
+          },
+          "9.5": {
+            "amazon": {
+              "2015": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-6-i386/",
+                  "package": "pgdg-ami201503-95-9.5-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-ami201503-95-9.5-3.noarch.rpm"
+                }
+              }
+            },
+            "centos": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-centos95-9.5-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-6-i386/",
+                  "package": "pgdg-centos95-9.5-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-centos95-9.5-3.noarch.rpm"
+                }
+              }
+            },
+            "redhat": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-redhat95-9.5-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat95-9.5-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat95-9.5-3.noarch.rpm"
+                }
+              }
+            },
+            "oracle": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-oraclelinux95-9.5-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-6-i386/",
+                  "package": "pgdg-oraclelinux95-9.5-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-oraclelinux95-9.5-3.noarch.rpm"
+                }
+              }
+            },
+            "scientific": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-sl95-9.5-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-6-i386/",
+                  "package": "pgdg-sl95-9.5-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-sl95-9.5-3.noarch.rpm"
+                }
+              }
+            },
+            "fedora": {
+              "22": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/fedora/fedora-22-x86_64/",
+                  "package": "pgdg-fedora95-9.5-3.noarch.rpm"
+                }
+              },
+              "23": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/fedora/fedora-23-x86_64/",
+                  "package": "pgdg-fedora95-9.5-4.noarch.rpm"
+                }
+              },
+              "24": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/fedora/fedora-24-x86_64/",
+                  "package": "pgdg-fedora95-9.5-4.noarch.rpm"
+                }
+              },
+              "25": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.5/fedora/fedora-25-x86_64/",
+                  "package": "pgdg-fedora95-9.5-4.noarch.rpm"
+                }
+              }
+            }
+          },
+          "9.4": {
+            "redhat": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-redhat94-9.4-2.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat94-9.4-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat94-9.4-2.noarch.rpm"
+                }
+              }
+            },
+            "centos": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-centos94-9.4-2.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-i386/",
+                  "package": "pgdg-centos94-9.4-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-centos94-9.4-2.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-5-i386/",
+                  "package": "pgdg-centos94-9.4-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-centos94-9.4-3.noarch.rpm"
+                }
+              }
+            },
+            "fedora": {
+              "22": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/fedora/fedora-22-x86_64/",
+                  "package": "pgdg-fedora94-9.4-4.noarch.rpm"
+                }
+              },
+              "23": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/fedora/fedora-23-x86_64/",
+                  "package": "pgdg-fedora94-9.4-5.noarch.rpm"
+                }
+              },
+              "24": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/fedora/fedora-24-x86_64/",
+                  "package": "pgdg-fedora94-9.4-5.noarch.rpm"
+                }
+              },
+              "25": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/fedora/fedora-25-x86_64/",
+                  "package": "pgdg-fedora94-9.4-5.noarch.rpm"
+                }
+              }
+            },
+            "amazon": {
+              "2015": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-i386/",
+                  "package": "pgdg-ami201503-94-9.4-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-ami201503-94-9.4-3.noarch.rpm"
+                }
+              }
+            },
+            "scientific": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-sl94-9.4-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-i386/",
+                  "package": "pgdg-sl94-9.4-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-sl94-9.4-3.noarch.rpm"
+                }
+              }
+            },
+            "oracle": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-oraclelinux94-9.4-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-i386/",
+                  "package": "pgdg-oraclelinux94-9.4-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-oraclelinux94-9.4-3.noarch.rpm"
+                }
+              }
+            }
+          },
+          "9.3": {
+            "amazon": {
+              "2015": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat93-9.3-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat93-9.3-3.noarch.rpm"
+                }
+              },
+              "2014": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat93-9.3-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat93-9.3-3.noarch.rpm"
+                }
+              }
+            },
+            "centos": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-centos93-9.3-3.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-centos93-9.3-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-centos93-9.3-3.noarch.rpm"
+                }
+              }
+            },
+            "fedora": {
+              "23": {
+                "x86_64": {
+                  "url": "https://yum.postgresql.org/9.3/fedora/fedora-23-x86_64/",
+                  "package": "pgdg-fedora93-9.3-4.noarch.rpm"
+                }
+              }
+            },
+            "redhat": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat93-9.3-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat93-9.3-3.noarch.rpm"
+                }
+              }
+            },
+            "oracle": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat93-9.3-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat93-9.3-3.noarch.rpm"
+                }
+              }
+            },
+            "scientific": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-sl93-9.3-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-sl93-9.3-3.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-5-i386/",
+                  "package": "pgdg-sl93-9.3-3.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-sl93-9.3-3.noarch.rpm"
+                }
+              }
+            }
+          },
+          "9.2": {
+            "centos": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-i386/",
+                  "package": "pgdg-centos92-9.2-8.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-centos92-9.2-8.noarch.rpm"
+                }
+              }
+            },
+            "redhat": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat92-9.2-9.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat92-9.2-9.noarch.rpm"
+                }
+              }
+            },
+            "oracle": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat92-9.2-9.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat92-9.2-9.noarch.rpm"
+                }
+              }
+            },
+            "scientific": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-i386/",
+                  "package": "pgdg-sl92-9.2-10.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-sl92-9.2-10.noarch.rpm"
+                }
+              }
+            }
+          }
+        }
+      },
+      "initdb_locale": "UTF-8"
+    },
+    "selinux_policy": {
+      "allow_disabled": true
+    },
+    "yum-scl": {
+      "prefer_os_package": true,
+      "enable_testing": false,
+      "enable_source": false,
+      "enable_debuginfo": false,
+      "native_packages": null,
+      "repos": {
+        "default": null,
+        "centos": {
+          ">=6.0": {
+            "centos-sclo-sclo-rh": {
+              "repositoryid": "centos-sclo-rh",
+              "description": "CentOS-12 - SCLo rh",
+              "baseurl": "http://mirror.centos.org/centos/12/sclo/$basearch/rh/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": true
+            },
+            "centos-sclo-sclo-rh-testing": {
+              "repositoryid": "centos-sclo-rh-testing",
+              "description": "CentOS-12 - SCLo rh Testing",
+              "baseurl": "http://buildlogs.centos.org/centos/12/sclo/$basearch/rh/",
+              "gpgcheck": false,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            },
+            "centos-sclo-sclo-rh-source": {
+              "repositoryid": "centos-sclo-rh-source",
+              "description": "CentOS-12 - SCLo rh Sources",
+              "baseurl": "http://buildlogs.centos.org/centos/12/sclo/Source/rh/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            },
+            "centos-sclo-sclo-rh-debuginfo": {
+              "repositoryid": "centos-sclo-rh-debuginfo",
+              "description": "CentOS-12 - SCLo rh Debuginfo",
+              "baseurl": "http://buildlogs.centos.org/centos/12/sclo/Source/rh/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            },
+            "centos-sclo-sclo": {
+              "repositoryid": "centos-sclo-sclo",
+              "description": "CentOS-12 - SCLo",
+              "baseurl": "http://mirror.centos.org/centos/12/sclo/$basearch/sclo/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": true
+            },
+            "centos-sclo-sclo-testing": {
+              "repositoryid": "centos-sclo-sclo-testing",
+              "description": "CentOS-12 - SCLo Testing",
+              "baseurl": "http://mirror.centos.org/centos/12/sclo/$basearch/sclo/",
+              "gpgcheck": false,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            },
+            "centos-sclo-sclo-source": {
+              "repositoryid": "centos-sclo-sclo-source",
+              "description": "CentOS-12 - SCLo Sources",
+              "baseurl": "http://mirror.centos.org/centos/12/sclo/$basearch/sclo/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            },
+            "centos-sclo-sclo-debuginfo": {
+              "repositoryid": "centos-sclo-sclo-debuginfo",
+              "description": "CentOS-12 - SCLo Debuginfo",
+              "baseurl": "http://mirror.centos.org/centos/12/sclo/$basearch/sclo/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            }
+          },
+          "default": null
+        },
+        "scientific": {
+          ">=6.0": {
+            "centos-sclo-sclo-rh": {
+              "repositoryid": "centos-sclo-rh",
+              "description": "CentOS-12 - SCLo rh",
+              "baseurl": "http://mirror.centos.org/centos/12/sclo/$basearch/rh/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": true
+            },
+            "centos-sclo-sclo-rh-testing": {
+              "repositoryid": "centos-sclo-rh-testing",
+              "description": "CentOS-12 - SCLo rh Testing",
+              "baseurl": "http://buildlogs.centos.org/centos/12/sclo/$basearch/rh/",
+              "gpgcheck": false,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            },
+            "centos-sclo-sclo-rh-source": {
+              "repositoryid": "centos-sclo-rh-source",
+              "description": "CentOS-12 - SCLo rh Sources",
+              "baseurl": "http://buildlogs.centos.org/centos/12/sclo/Source/rh/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            },
+            "centos-sclo-sclo-rh-debuginfo": {
+              "repositoryid": "centos-sclo-rh-debuginfo",
+              "description": "CentOS-12 - SCLo rh Debuginfo",
+              "baseurl": "http://buildlogs.centos.org/centos/12/sclo/Source/rh/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            },
+            "centos-sclo-sclo": {
+              "repositoryid": "centos-sclo-sclo",
+              "description": "CentOS-12 - SCLo",
+              "baseurl": "http://mirror.centos.org/centos/12/sclo/$basearch/sclo/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": true
+            },
+            "centos-sclo-sclo-testing": {
+              "repositoryid": "centos-sclo-sclo-testing",
+              "description": "CentOS-12 - SCLo Testing",
+              "baseurl": "http://mirror.centos.org/centos/12/sclo/$basearch/sclo/",
+              "gpgcheck": false,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            },
+            "centos-sclo-sclo-source": {
+              "repositoryid": "centos-sclo-sclo-source",
+              "description": "CentOS-12 - SCLo Sources",
+              "baseurl": "http://mirror.centos.org/centos/12/sclo/$basearch/sclo/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            },
+            "centos-sclo-sclo-debuginfo": {
+              "repositoryid": "centos-sclo-sclo-debuginfo",
+              "description": "CentOS-12 - SCLo Debuginfo",
+              "baseurl": "http://mirror.centos.org/centos/12/sclo/$basearch/sclo/",
+              "gpgcheck": true,
+              "gpgkey": "RPM-GPG-KEY-CentOS-SIG-SCLo",
+              "enabled": false
+            }
+          },
+          "default": null
+        }
+      }
+    },
+    "mariadb": {
+      "configuration": {
+        "path": "/etc/mysql",
+        "includedir": "/etc/mysql/conf.d"
+      },
+      "mysqld": {
+        "socket": "/var/run/mysqld/mysqld.sock",
+        "pid_file": "/var/run/mysqld/mysqld.pid",
+        "service_name": "mysql",
+        "user": "mysql",
+        "port": "3306",
+        "basedir": "/usr",
+        "default_datadir": "/var/lib/mysql",
+        "datadir": "/var/lib/mysql",
+        "tmpdir": "/var/tmp",
+        "lc_messages_dir": "/usr/share/mysql",
+        "lc_messages": "en_US",
+        "skip_external_locking": "true",
+        "skip_log_bin": "false",
+        "skip_name_resolve": "false",
+        "bind_address": "127.0.0.1",
+        "max_connections": "100",
+        "max_statement_time": "",
+        "connect_timeout": "5",
+        "wait_timeout": "600",
+        "max_allowed_packet": "16M",
+        "thread_cache_size": "128",
+        "sort_buffer_size": "4M",
+        "bulk_insert_buffer_size": "16M",
+        "tmp_table_size": "32M",
+        "max_heap_table_size": "32M",
+        "myisam_recover": "BACKUP",
+        "key_buffer_size": "128M",
+        "open_files_limit": "",
+        "table_open_cache": "400",
+        "myisam_sort_buffer_size": "512M",
+        "concurrent_insert": "2",
+        "read_buffer_size": "2M",
+        "read_rnd_buffer_size": "1M",
+        "query_cache_limit": "128K",
+        "query_cache_size": "64M",
+        "query_cache_type": "",
+        "default_storage_engine": "InnoDB",
+        "options": {
+
+        },
+        "general_log_file": "/var/log/mysql/mysql.log",
+        "general_log": 0,
+        "log_warnings": 2,
+        "slow_query_log": 0,
+        "slow_query_log_file": "/var/log/mysql/mariadb-slow.log",
+        "long_query_time": 10,
+        "log_slow_rate_limit": 1000,
+        "log_slow_verbosity": "query_plan",
+        "log_output": "FILE"
+      },
+      "client": {
+        "socket": "/var/run/mysqld/mysqld.sock",
+        "port": 3306,
+        "options": {
+
+        },
+        "development_files": true
+      },
+      "mysqld_safe": {
+        "socket": "/var/run/mysqld/mysqld.sock",
+        "options": {
+
+        }
+      },
+      "sections": [
+        "mysql",
+        "mysqldump",
+        "mysqlcheck",
+        "mysqladmin",
+        "mysqlshow"
+      ],
+      "remove_anonymous_users": true,
+      "remove_test_database": true,
+      "forbid_remote_root": true,
+      "server_root_password": "",
+      "root_my_cnf": false,
+      "allow_root_pass_change": false,
+      "innodb": {
+        "log_file_size": "",
+        "bps_percentage_memory": false,
+        "buffer_pool_size": "256M",
+        "log_buffer_size": "8M",
+        "file_per_table": "1",
+        "open_files": "400",
+        "io_capacity": "400",
+        "flush_method": "O_DIRECT",
+        "options": {
+
+        }
+      },
+      "galera": {
+        "cluster_name": "galera_cluster",
+        "cluster_search_query": "",
+        "server_id": "100",
+        "wsrep_sst_method": "rsync",
+        "wsrep_sst_auth": "sstuser:some_secret_password",
+        "wsrep_provider": "/usr/lib/galera/libgalera_smm.so",
+        "wsrep_slave_threads": "4",
+        "innodb_flush_log_at_trx_commit": "2",
+        "wsrep_node_address_interface": "",
+        "wsrep_node_port": "",
+        "wsrep_node_incoming_address_interface": "",
+        "wsrep_provider_options": {
+          "gcache.size": "512M"
+        },
+        "options": {
+
+        },
+        "cluster_nodes": [
+
+        ]
+      },
+      "replication": {
+        "server_id": "",
+        "log_bin": "/var/log/mysql/mariadb-bin",
+        "log_bin_index": "/var/log/mysql/mariadb-bin.index",
+        "sync_binlog": "0",
+        "expire_logs_days": "10",
+        "max_binlog_size": "100M",
+        "options": {
+
+        }
+      },
+      "mysqldump": {
+        "quick": "true",
+        "quote_names": "true",
+        "max_allowed_packet": "16M"
+      },
+      "isamchk": {
+        "key_buffer": "16M"
+      },
+      "debian": {
+        "user": "debian-sys-maint",
+        "password": "please-change-me",
+        "host": "localhost"
+      },
+      "install": {
+        "type": "package",
+        "version": "10.0",
+        "prefer_os_package": false,
+        "prefer_scl_package": false,
+        "extra_packages": true
+      },
+      "use_default_repository": false,
+      "apt_repository": {
+        "base_url": "ftp.igh.cnrs.fr/pub/mariadb/repo"
+      },
+      "plugins_options": {
+        "auto_install": true
+      },
+      "plugins": {
+        "audit": false
+      },
+      "plugins_loading": {
+        "audit": "server_audit=server_audit.so"
+      },
+      "audit_plugin": {
+        "server_audit_events": "",
+        "server_audit_output_type": "file",
+        "server_audit_syslog_facility": "LOG_USER",
+        "server_audit_syslog_priority": "LOG_INFO",
+        "server_audit_logging": "OFF"
+      }
+    },
     "xml": {
       "compiletime": false,
       "packages": [
@@ -524,7 +1512,14 @@
     "pkgs": [
       "git",
       "emacs"
-    ]
+    ],
+    "mysql": {
+      "root_password": "root",
+      "db_name": "mweike",
+      "db_user": "weike",
+      "db_password": "weike",
+      "db_file": "/vagrant/db/mweike.sql"
+    }
   },
   "automatic": {
     "kernel": {
@@ -661,9 +1656,9 @@
     },
     "memory": {
       "swap": {
-        "cached": "508kB",
+        "cached": "6796kB",
         "total": "786428kB",
-        "free": "781992kB"
+        "free": "736548kB"
       },
       "hugepages": {
         "total": "0",
@@ -672,23 +1667,23 @@
         "surplus": "0"
       },
       "total": "374256kB",
-      "free": "13272kB",
-      "buffers": "19800kB",
-      "cached": "128140kB",
-      "active": "142528kB",
-      "inactive": "146076kB",
-      "dirty": "13092kB",
+      "free": "11652kB",
+      "buffers": "18904kB",
+      "cached": "138708kB",
+      "active": "105164kB",
+      "inactive": "181368kB",
+      "dirty": "13796kB",
       "writeback": "0kB",
-      "anon_pages": "140340kB",
-      "mapped": "10264kB",
-      "slab": "55584kB",
-      "slab_reclaimable": "43536kB",
-      "slab_unreclaim": "12048kB",
-      "page_tables": "3124kB",
+      "anon_pages": "123924kB",
+      "mapped": "8968kB",
+      "slab": "57996kB",
+      "slab_reclaimable": "44836kB",
+      "slab_unreclaim": "13160kB",
+      "page_tables": "4276kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "973556kB",
-      "committed_as": "503660kB",
+      "committed_as": "572096kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "9136kB",
       "vmalloc_chunk": "34359725884kB",
@@ -803,15 +1798,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "0",
-              "packets": "0",
+              "bytes": "345348",
+              "packets": "507",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "0",
-              "packets": "0",
+              "bytes": "345348",
+              "packets": "507",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -821,16 +1816,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "876553",
-              "packets": "6287",
+              "bytes": "5686156",
+              "packets": "50493",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "1313903",
-              "packets": "9911",
+              "bytes": "32083902",
+              "packets": "84199",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -978,12 +1973,12 @@
       "by_device": {
         "/dev/mapper/precise64-root": {
           "kb_size": "82711212",
-          "kb_used": "2954364",
-          "kb_available": "75614564",
+          "kb_used": "3027684",
+          "kb_available": "75541244",
           "percent_used": "4%",
           "total_inodes": "5185536",
-          "inodes_used": "83645",
-          "inodes_available": "5101891",
+          "inodes_used": "85673",
+          "inodes_available": "5099863",
           "inodes_percent_used": "2%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1015,12 +2010,12 @@
         },
         "tmpfs": {
           "kb_size": "74852",
-          "kb_used": "288",
-          "kb_available": "74564",
+          "kb_used": "296",
+          "kb_available": "74556",
           "percent_used": "1%",
           "total_inodes": "46782",
-          "inodes_used": "361",
-          "inodes_available": "46421",
+          "inodes_used": "363",
+          "inodes_available": "46419",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1085,9 +2080,9 @@
         },
         "vagrant": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1104,9 +2099,9 @@
         },
         "vagrant-cache": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1123,9 +2118,9 @@
         },
         "v-csr-8f308230b": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1142,9 +2137,9 @@
         },
         "v-csn-42745ac61": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1161,9 +2156,9 @@
         },
         "v-csc-2cc073dd4": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1180,9 +2175,9 @@
         },
         "v-csc-6bffb9d96": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1199,9 +2194,9 @@
         },
         "v-csdb-4df34070f": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1214,25 +2209,6 @@
           ],
           "mounts": [
             "/tmp/vagrant-chef/ac6ea4c8ad80a91da5d02a6cfa6d8ab3/data_bags"
-          ]
-        },
-        "v-csc-e21b8d515": {
-          "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
-          "total_inodes": "1000",
-          "inodes_used": "0",
-          "inodes_available": "1000",
-          "inodes_percent_used": "0%",
-          "fs_type": "vboxsf",
-          "mount_options": [
-            "uid=1000",
-            "gid=1000",
-            "rw"
-          ],
-          "mounts": [
-            "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks"
           ]
         },
         "proc": {
@@ -1279,6 +2255,17 @@
           ],
           "mounts": [
             "/run/rpc_pipefs"
+          ]
+        },
+        "v-csc-e21b8d515": {
+          "fs_type": "vboxsf",
+          "mount_options": [
+            "uid=1000",
+            "gid=1000",
+            "rw"
+          ],
+          "mounts": [
+            "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks"
           ]
         },
         "/dev/sda": {
@@ -1328,12 +2315,12 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "82711212",
-          "kb_used": "2954364",
-          "kb_available": "75614564",
+          "kb_used": "3027684",
+          "kb_available": "75541244",
           "percent_used": "4%",
           "total_inodes": "5185536",
-          "inodes_used": "83645",
-          "inodes_available": "5101891",
+          "inodes_used": "85673",
+          "inodes_available": "5099863",
           "inodes_percent_used": "2%",
           "fs_type": "rootfs",
           "mount_options": [
@@ -1365,12 +2352,12 @@
         },
         "/run": {
           "kb_size": "74852",
-          "kb_used": "288",
-          "kb_available": "74564",
+          "kb_used": "296",
+          "kb_available": "74556",
           "percent_used": "1%",
           "total_inodes": "46782",
-          "inodes_used": "361",
-          "inodes_available": "46421",
+          "inodes_used": "363",
+          "inodes_available": "46419",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1444,9 +2431,9 @@
         },
         "/vagrant": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1464,9 +2451,9 @@
         },
         "/tmp/vagrant-cache": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1484,9 +2471,9 @@
         },
         "/tmp/vagrant-chef/ca2c1bba87236a3c70347c4230a0435e/roles": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1504,9 +2491,9 @@
         },
         "/tmp/vagrant-chef/6c889ffd56a58e9b38345de31a4a26c1/nodes": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1524,9 +2511,9 @@
         },
         "/tmp/vagrant-chef/47b3533c83cd7a2a6838f4d9517373a4/cookbooks": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1544,9 +2531,9 @@
         },
         "/tmp/vagrant-chef/92561de1f9f41b0fbb43ca848257c76f/cookbooks": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1564,9 +2551,9 @@
         },
         "/tmp/vagrant-chef/ac6ea4c8ad80a91da5d02a6cfa6d8ab3/data_bags": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1579,26 +2566,6 @@
           ],
           "devices": [
             "v-csdb-4df34070f",
-            "none"
-          ]
-        },
-        "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks": {
-          "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
-          "total_inodes": "1000",
-          "inodes_used": "0",
-          "inodes_available": "1000",
-          "inodes_percent_used": "0%",
-          "fs_type": "vboxsf",
-          "mount_options": [
-            "rw",
-            "nodev",
-            "relatime"
-          ],
-          "devices": [
-            "v-csc-e21b8d515",
             "none"
           ]
         },
@@ -1674,19 +2641,31 @@
           "devices": [
             "rpc_pipefs"
           ]
+        },
+        "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks": {
+          "fs_type": "vboxsf",
+          "mount_options": [
+            "rw",
+            "nodev",
+            "relatime"
+          ],
+          "devices": [
+            "v-csc-e21b8d515",
+            "none"
+          ]
         }
       },
       "by_pair": {
         "/dev/mapper/precise64-root,/": {
           "device": "/dev/mapper/precise64-root",
           "kb_size": "82711212",
-          "kb_used": "2954364",
-          "kb_available": "75614564",
+          "kb_used": "3027684",
+          "kb_available": "75541244",
           "percent_used": "4%",
           "mount": "/",
           "total_inodes": "5185536",
-          "inodes_used": "83645",
-          "inodes_available": "5101891",
+          "inodes_used": "85673",
+          "inodes_available": "5099863",
           "inodes_percent_used": "2%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1715,13 +2694,13 @@
         "tmpfs,/run": {
           "device": "tmpfs",
           "kb_size": "74852",
-          "kb_used": "288",
-          "kb_available": "74564",
+          "kb_used": "296",
+          "kb_available": "74556",
           "percent_used": "1%",
           "mount": "/run",
           "total_inodes": "46782",
-          "inodes_used": "361",
-          "inodes_available": "46421",
+          "inodes_used": "363",
+          "inodes_available": "46419",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1790,9 +2769,9 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/vagrant",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1808,9 +2787,9 @@
         "vagrant-cache,/tmp/vagrant-cache": {
           "device": "vagrant-cache",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-cache",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1826,9 +2805,9 @@
         "v-csr-8f308230b,/tmp/vagrant-chef/ca2c1bba87236a3c70347c4230a0435e/roles": {
           "device": "v-csr-8f308230b",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-chef/ca2c1bba87236a3c70347c4230a0435e/roles",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1844,9 +2823,9 @@
         "v-csn-42745ac61,/tmp/vagrant-chef/6c889ffd56a58e9b38345de31a4a26c1/nodes": {
           "device": "v-csn-42745ac61",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-chef/6c889ffd56a58e9b38345de31a4a26c1/nodes",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1862,9 +2841,9 @@
         "v-csc-2cc073dd4,/tmp/vagrant-chef/47b3533c83cd7a2a6838f4d9517373a4/cookbooks": {
           "device": "v-csc-2cc073dd4",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-chef/47b3533c83cd7a2a6838f4d9517373a4/cookbooks",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1880,9 +2859,9 @@
         "v-csc-6bffb9d96,/tmp/vagrant-chef/92561de1f9f41b0fbb43ca848257c76f/cookbooks": {
           "device": "v-csc-6bffb9d96",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-chef/92561de1f9f41b0fbb43ca848257c76f/cookbooks",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1898,28 +2877,10 @@
         "v-csdb-4df34070f,/tmp/vagrant-chef/ac6ea4c8ad80a91da5d02a6cfa6d8ab3/data_bags": {
           "device": "v-csdb-4df34070f",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-chef/ac6ea4c8ad80a91da5d02a6cfa6d8ab3/data_bags",
-          "total_inodes": "1000",
-          "inodes_used": "0",
-          "inodes_available": "1000",
-          "inodes_percent_used": "0%",
-          "fs_type": "vboxsf",
-          "mount_options": [
-            "uid=1000",
-            "gid=1000",
-            "rw"
-          ]
-        },
-        "v-csc-e21b8d515,/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks": {
-          "device": "v-csc-e21b8d515",
-          "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
-          "mount": "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -1994,6 +2955,16 @@
           "mount": "/run/rpc_pipefs",
           "fs_type": "rpc_pipefs",
           "mount_options": [
+            "rw"
+          ]
+        },
+        "v-csc-e21b8d515,/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks": {
+          "device": "v-csc-e21b8d515",
+          "mount": "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks",
+          "fs_type": "vboxsf",
+          "mount_options": [
+            "uid=1000",
+            "gid=1000",
             "rw"
           ]
         },
@@ -2113,12 +3084,12 @@
       "by_device": {
         "/dev/mapper/precise64-root": {
           "kb_size": "82711212",
-          "kb_used": "2954364",
-          "kb_available": "75614564",
+          "kb_used": "3027684",
+          "kb_available": "75541244",
           "percent_used": "4%",
           "total_inodes": "5185536",
-          "inodes_used": "83645",
-          "inodes_available": "5101891",
+          "inodes_used": "85673",
+          "inodes_available": "5099863",
           "inodes_percent_used": "2%",
           "fs_type": "ext4",
           "mount_options": [
@@ -2150,12 +3121,12 @@
         },
         "tmpfs": {
           "kb_size": "74852",
-          "kb_used": "288",
-          "kb_available": "74564",
+          "kb_used": "296",
+          "kb_available": "74556",
           "percent_used": "1%",
           "total_inodes": "46782",
-          "inodes_used": "361",
-          "inodes_available": "46421",
+          "inodes_used": "363",
+          "inodes_available": "46419",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2220,9 +3191,9 @@
         },
         "vagrant": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2239,9 +3210,9 @@
         },
         "vagrant-cache": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2258,9 +3229,9 @@
         },
         "v-csr-8f308230b": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2277,9 +3248,9 @@
         },
         "v-csn-42745ac61": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2296,9 +3267,9 @@
         },
         "v-csc-2cc073dd4": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2315,9 +3286,9 @@
         },
         "v-csc-6bffb9d96": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2334,9 +3305,9 @@
         },
         "v-csdb-4df34070f": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2349,25 +3320,6 @@
           ],
           "mounts": [
             "/tmp/vagrant-chef/ac6ea4c8ad80a91da5d02a6cfa6d8ab3/data_bags"
-          ]
-        },
-        "v-csc-e21b8d515": {
-          "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
-          "total_inodes": "1000",
-          "inodes_used": "0",
-          "inodes_available": "1000",
-          "inodes_percent_used": "0%",
-          "fs_type": "vboxsf",
-          "mount_options": [
-            "uid=1000",
-            "gid=1000",
-            "rw"
-          ],
-          "mounts": [
-            "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks"
           ]
         },
         "proc": {
@@ -2414,6 +3366,17 @@
           ],
           "mounts": [
             "/run/rpc_pipefs"
+          ]
+        },
+        "v-csc-e21b8d515": {
+          "fs_type": "vboxsf",
+          "mount_options": [
+            "uid=1000",
+            "gid=1000",
+            "rw"
+          ],
+          "mounts": [
+            "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks"
           ]
         },
         "/dev/sda": {
@@ -2463,12 +3426,12 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "82711212",
-          "kb_used": "2954364",
-          "kb_available": "75614564",
+          "kb_used": "3027684",
+          "kb_available": "75541244",
           "percent_used": "4%",
           "total_inodes": "5185536",
-          "inodes_used": "83645",
-          "inodes_available": "5101891",
+          "inodes_used": "85673",
+          "inodes_available": "5099863",
           "inodes_percent_used": "2%",
           "fs_type": "rootfs",
           "mount_options": [
@@ -2500,12 +3463,12 @@
         },
         "/run": {
           "kb_size": "74852",
-          "kb_used": "288",
-          "kb_available": "74564",
+          "kb_used": "296",
+          "kb_available": "74556",
           "percent_used": "1%",
           "total_inodes": "46782",
-          "inodes_used": "361",
-          "inodes_available": "46421",
+          "inodes_used": "363",
+          "inodes_available": "46419",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2579,9 +3542,9 @@
         },
         "/vagrant": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2599,9 +3562,9 @@
         },
         "/tmp/vagrant-cache": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2619,9 +3582,9 @@
         },
         "/tmp/vagrant-chef/ca2c1bba87236a3c70347c4230a0435e/roles": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2639,9 +3602,9 @@
         },
         "/tmp/vagrant-chef/6c889ffd56a58e9b38345de31a4a26c1/nodes": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2659,9 +3622,9 @@
         },
         "/tmp/vagrant-chef/47b3533c83cd7a2a6838f4d9517373a4/cookbooks": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2679,9 +3642,9 @@
         },
         "/tmp/vagrant-chef/92561de1f9f41b0fbb43ca848257c76f/cookbooks": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2699,9 +3662,9 @@
         },
         "/tmp/vagrant-chef/ac6ea4c8ad80a91da5d02a6cfa6d8ab3/data_bags": {
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -2714,26 +3677,6 @@
           ],
           "devices": [
             "v-csdb-4df34070f",
-            "none"
-          ]
-        },
-        "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks": {
-          "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
-          "total_inodes": "1000",
-          "inodes_used": "0",
-          "inodes_available": "1000",
-          "inodes_percent_used": "0%",
-          "fs_type": "vboxsf",
-          "mount_options": [
-            "rw",
-            "nodev",
-            "relatime"
-          ],
-          "devices": [
-            "v-csc-e21b8d515",
             "none"
           ]
         },
@@ -2809,19 +3752,31 @@
           "devices": [
             "rpc_pipefs"
           ]
+        },
+        "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks": {
+          "fs_type": "vboxsf",
+          "mount_options": [
+            "rw",
+            "nodev",
+            "relatime"
+          ],
+          "devices": [
+            "v-csc-e21b8d515",
+            "none"
+          ]
         }
       },
       "by_pair": {
         "/dev/mapper/precise64-root,/": {
           "device": "/dev/mapper/precise64-root",
           "kb_size": "82711212",
-          "kb_used": "2954364",
-          "kb_available": "75614564",
+          "kb_used": "3027684",
+          "kb_available": "75541244",
           "percent_used": "4%",
           "mount": "/",
           "total_inodes": "5185536",
-          "inodes_used": "83645",
-          "inodes_available": "5101891",
+          "inodes_used": "85673",
+          "inodes_available": "5099863",
           "inodes_percent_used": "2%",
           "fs_type": "ext4",
           "mount_options": [
@@ -2850,13 +3805,13 @@
         "tmpfs,/run": {
           "device": "tmpfs",
           "kb_size": "74852",
-          "kb_used": "288",
-          "kb_available": "74564",
+          "kb_used": "296",
+          "kb_available": "74556",
           "percent_used": "1%",
           "mount": "/run",
           "total_inodes": "46782",
-          "inodes_used": "361",
-          "inodes_available": "46421",
+          "inodes_used": "363",
+          "inodes_available": "46419",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2925,9 +3880,9 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/vagrant",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2943,9 +3898,9 @@
         "vagrant-cache,/tmp/vagrant-cache": {
           "device": "vagrant-cache",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-cache",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2961,9 +3916,9 @@
         "v-csr-8f308230b,/tmp/vagrant-chef/ca2c1bba87236a3c70347c4230a0435e/roles": {
           "device": "v-csr-8f308230b",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-chef/ca2c1bba87236a3c70347c4230a0435e/roles",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2979,9 +3934,9 @@
         "v-csn-42745ac61,/tmp/vagrant-chef/6c889ffd56a58e9b38345de31a4a26c1/nodes": {
           "device": "v-csn-42745ac61",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-chef/6c889ffd56a58e9b38345de31a4a26c1/nodes",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2997,9 +3952,9 @@
         "v-csc-2cc073dd4,/tmp/vagrant-chef/47b3533c83cd7a2a6838f4d9517373a4/cookbooks": {
           "device": "v-csc-2cc073dd4",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-chef/47b3533c83cd7a2a6838f4d9517373a4/cookbooks",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -3015,9 +3970,9 @@
         "v-csc-6bffb9d96,/tmp/vagrant-chef/92561de1f9f41b0fbb43ca848257c76f/cookbooks": {
           "device": "v-csc-6bffb9d96",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-chef/92561de1f9f41b0fbb43ca848257c76f/cookbooks",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -3033,28 +3988,10 @@
         "v-csdb-4df34070f,/tmp/vagrant-chef/ac6ea4c8ad80a91da5d02a6cfa6d8ab3/data_bags": {
           "device": "v-csdb-4df34070f",
           "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
+          "kb_used": "188793752",
+          "kb_available": "298564712",
+          "percent_used": "39%",
           "mount": "/tmp/vagrant-chef/ac6ea4c8ad80a91da5d02a6cfa6d8ab3/data_bags",
-          "total_inodes": "1000",
-          "inodes_used": "0",
-          "inodes_available": "1000",
-          "inodes_percent_used": "0%",
-          "fs_type": "vboxsf",
-          "mount_options": [
-            "uid=1000",
-            "gid=1000",
-            "rw"
-          ]
-        },
-        "v-csc-e21b8d515,/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks": {
-          "device": "v-csc-e21b8d515",
-          "kb_size": "487358464",
-          "kb_used": "184938852",
-          "kb_available": "302419612",
-          "percent_used": "38%",
-          "mount": "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks",
           "total_inodes": "1000",
           "inodes_used": "0",
           "inodes_available": "1000",
@@ -3129,6 +4066,16 @@
           "mount": "/run/rpc_pipefs",
           "fs_type": "rpc_pipefs",
           "mount_options": [
+            "rw"
+          ]
+        },
+        "v-csc-e21b8d515,/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks": {
+          "device": "v-csc-e21b8d515",
+          "mount": "/tmp/vagrant-chef/f46c01984842b95c8c209ed8fc26cd7c/cookbooks",
+          "fs_type": "vboxsf",
+          "mount_options": [
+            "uid=1000",
+            "gid=1000",
             "rw"
           ]
         },
@@ -3491,10 +4438,10 @@
         "guest_additions_revision": "80737"
       }
     },
-    "uptime_seconds": 5997,
-    "uptime": "1 hours 39 minutes 57 seconds",
-    "idletime_seconds": 11933,
-    "idletime": "3 hours 18 minutes 53 seconds",
+    "uptime_seconds": 77831,
+    "uptime": "21 hours 37 minutes 11 seconds",
+    "idletime_seconds": 155217,
+    "idletime": "1 day 19 hours 06 minutes 57 seconds",
     "dmi": {
       "dmidecode_version": "2.11",
       "smbios_version": "2.5",
@@ -3631,7 +4578,7 @@
         "string_2": "vboxRev_114629"
       }
     },
-    "ohai_time": 1493205976.6183426,
+    "ohai_time": 1493410390.8898432,
     "hostname": "precise64",
     "machinename": "precise64",
     "fqdn": "precise64",
@@ -3731,12 +4678,24 @@
         "version": "2.22-6ubuntu1",
         "arch": "amd64"
       },
+      "binutils-doc": {
+        "version": "2.22-6ubuntu1.4",
+        "arch": "all"
+      },
+      "bison": {
+        "version": "1:2.5.dfsg-2.1",
+        "arch": "amd64"
+      },
       "bsdmainutils": {
         "version": "8.2.3ubuntu1",
         "arch": "amd64"
       },
       "bsdutils": {
         "version": "1:2.20.1-1ubuntu3",
+        "arch": "amd64"
+      },
+      "build-essential": {
+        "version": "11.5ubuntu2.1",
         "arch": "amd64"
       },
       "busybox-initramfs": {
@@ -3840,7 +4799,7 @@
         "arch": "amd64"
       },
       "dpkg-dev": {
-        "version": "1.16.1.2ubuntu7",
+        "version": "1.16.1.2ubuntu7.8",
         "arch": "all"
       },
       "e2fslibs": {
@@ -3891,6 +4850,10 @@
         "version": "4.4.2-4ubuntu1",
         "arch": "amd64"
       },
+      "flex": {
+        "version": "2.5.35-10ubuntu3",
+        "arch": "amd64"
+      },
       "fontconfig": {
         "version": "2.8.0-3ubuntu9.2",
         "arch": "amd64"
@@ -3909,6 +4872,14 @@
       },
       "fuse": {
         "version": "2.8.6-2ubuntu2",
+        "arch": "amd64"
+      },
+      "g++": {
+        "version": "4:4.6.3-1ubuntu5",
+        "arch": "amd64"
+      },
+      "g++-4.6": {
+        "version": "4.6.3-1ubuntu5",
         "arch": "amd64"
       },
       "gcc": {
@@ -3938,6 +4909,10 @@
       "geoip-database": {
         "version": "20111220-1",
         "arch": "all"
+      },
+      "gettext": {
+        "version": "0.18.1.1-5ubuntu3",
+        "arch": "amd64"
       },
       "gettext-base": {
         "version": "0.18.1.1-5ubuntu3",
@@ -4123,6 +5098,18 @@
         "version": "2.2.51-5ubuntu1",
         "arch": "amd64"
       },
+      "libalgorithm-diff-perl": {
+        "version": "1.19.02-2",
+        "arch": "all"
+      },
+      "libalgorithm-diff-xs-perl": {
+        "version": "0.04-2build2",
+        "arch": "amd64"
+      },
+      "libalgorithm-merge-perl": {
+        "version": "0.08-2",
+        "arch": "all"
+      },
       "libapt-inst1.4": {
         "version": "0.8.16~exp12ubuntu10",
         "arch": "amd64"
@@ -4165,6 +5152,10 @@
       },
       "libbind9-80": {
         "version": "1:9.8.1.dfsg.P1-4",
+        "arch": "amd64"
+      },
+      "libbison-dev": {
+        "version": "1:2.5.dfsg-2.1",
         "arch": "amd64"
       },
       "libblkid1": {
@@ -4279,6 +5270,10 @@
         "version": "1:9.8.1.dfsg.P1-4",
         "arch": "amd64"
       },
+      "libdpkg-perl": {
+        "version": "1.16.1.2ubuntu7.8",
+        "arch": "all"
+      },
       "libdrm-intel1": {
         "version": "2.4.32-1ubuntu1",
         "arch": "amd64"
@@ -4323,6 +5318,10 @@
         "version": "3.0.11~rc1-5",
         "arch": "amd64"
       },
+      "libfl-dev": {
+        "version": "2.5.35-10ubuntu3",
+        "arch": "amd64"
+      },
       "libfontconfig1": {
         "version": "2.8.0-3ubuntu9.2",
         "arch": "amd64"
@@ -4355,6 +5354,10 @@
         "version": "2.0.36~rc1~dfsg-6ubuntu2.4",
         "arch": "amd64"
       },
+      "libgd2-xpm": {
+        "version": "2.0.36~rc1~dfsg-6ubuntu2.4",
+        "arch": "amd64"
+      },
       "libgdbm3": {
         "version": "1.8.3-10",
         "arch": "amd64"
@@ -4369,6 +5372,10 @@
       },
       "libgeoip1": {
         "version": "1.4.8+dfsg-2",
+        "arch": "amd64"
+      },
+      "libgettextpo0": {
+        "version": "0.18.1.1-5ubuntu3",
         "arch": "amd64"
       },
       "libgif4": {
@@ -4559,11 +5566,19 @@
         "version": "3.1.0-3ubuntu2",
         "arch": "amd64"
       },
+      "libmysqlclient-dev": {
+        "version": "5.5.54-0ubuntu0.12.04.1",
+        "arch": "amd64"
+      },
       "libmysqlclient18": {
         "version": "5.5.54-0ubuntu0.12.04.1",
         "arch": "amd64"
       },
       "libncurses5": {
+        "version": "5.9-4",
+        "arch": "amd64"
+      },
+      "libncurses5-dev": {
         "version": "5.9-4",
         "arch": "amd64"
       },
@@ -4763,6 +5778,10 @@
         "version": "4.6.3-1ubuntu5",
         "arch": "amd64"
       },
+      "libstdc++6-4.6-dev": {
+        "version": "4.6.3-1ubuntu5",
+        "arch": "amd64"
+      },
       "libsub-name-perl": {
         "version": "0.05-1build2",
         "arch": "amd64"
@@ -4770,6 +5789,10 @@
       "libswitch-perl": {
         "version": "2.16-2",
         "arch": "all"
+      },
+      "libt1-5": {
+        "version": "5.1.2-3.4ubuntu1",
+        "arch": "amd64"
       },
       "libtasn1-3": {
         "version": "2.10-1ubuntu1",
@@ -4825,6 +5848,10 @@
       },
       "libudev0": {
         "version": "175-0ubuntu9",
+        "arch": "amd64"
+      },
+      "libunistring0": {
+        "version": "0.9.3-5",
         "arch": "amd64"
       },
       "libusb-0.1-4": {
@@ -5019,6 +6046,10 @@
         "version": "1.4.16-2ubuntu1",
         "arch": "amd64"
       },
+      "make": {
+        "version": "3.81-8.1ubuntu1.1",
+        "arch": "amd64"
+      },
       "makedev": {
         "version": "2.3.1-89ubuntu2",
         "arch": "all"
@@ -5200,6 +6231,18 @@
         "arch": "amd64"
       },
       "php5-dev": {
+        "version": "5.3.10-1ubuntu3.26",
+        "arch": "amd64"
+      },
+      "php5-fpm": {
+        "version": "5.3.10-1ubuntu3.26",
+        "arch": "amd64"
+      },
+      "php5-gd": {
+        "version": "5.3.10-1ubuntu3.26",
+        "arch": "amd64"
+      },
+      "php5-mysql": {
         "version": "5.3.10-1ubuntu3.26",
         "arch": "amd64"
       },
@@ -6102,7 +7145,7 @@
       "ULONG_MAX": 18446744073709551615,
       "USHRT_MAX": 65535,
       "WORD_BIT": 32,
-      "_AVPHYS_PAGES": 2906,
+      "_AVPHYS_PAGES": 2204,
       "_NPROCESSORS_CONF": 2,
       "_NPROCESSORS_ONLN": 2,
       "_PHYS_PAGES": 93564,
@@ -6372,7 +7415,8 @@
       "chef_nginx::commons",
       "chef_nginx::commons_dir",
       "chef_nginx::commons_script",
-      "chef_nginx::commons_conf"
+      "chef_nginx::commons_conf",
+      "build-essential::default"
     ],
     "expanded_run_list": [
       "weike::default"
@@ -6396,6 +7440,12 @@
       "php": {
         "version": "4.0.0"
       },
+      "mysql2_chef_gem": {
+        "version": "2.0.1"
+      },
+      "database": {
+        "version": "6.1.1"
+      },
       "build-essential": {
         "version": "8.0.1"
       },
@@ -6414,14 +7464,35 @@
       "xml": {
         "version": "3.1.1"
       },
+      "mariadb": {
+        "version": "1.5.0"
+      },
+      "postgresql": {
+        "version": "6.1.1"
+      },
       "seven_zip": {
         "version": "2.0.2"
       },
       "mingw": {
         "version": "2.0.0"
       },
+      "selinux_policy": {
+        "version": "2.0.1"
+      },
+      "yum": {
+        "version": "5.0.1"
+      },
+      "yum-scl": {
+        "version": "0.2.0"
+      },
+      "openssl": {
+        "version": "7.0.1"
+      },
       "windows": {
         "version": "3.0.5"
+      },
+      "inifile_chef_gem": {
+        "version": "0.1.0"
       }
     },
     "nginx": {

@@ -12,3 +12,6 @@ depends 'chef_nginx', '~> 6.0.1'
 #depends 'nginx', '~> 2.7.6'
 depends 'mysql', '~> 8.3.1'
 depends 'php', '~> 4.0.0'
+
+depends 'mysql2_chef_gem', '~> 2.0.1'
+depends 'database', '~> 6.1.1'
