@@ -33,8 +33,23 @@ end
 # php
 include_recipe 'php::default'
 
+# Install a FPM pool named "default"
+php_fpm_pool "default" do
+  action :install
+end
+
+node['php']['modules'].each do |mod|
+  package mod
+end
+
+
 # nginx
 include_recipe 'chef_nginx::default'
+
+nginx_site 'mweike' do
+  template 'nginx-site.erb'
+end
+
 
 # mysql
 mysql_service 'mweike' do
