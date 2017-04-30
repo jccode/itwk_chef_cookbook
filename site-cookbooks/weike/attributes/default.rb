@@ -1,6 +1,8 @@
 
 default['pkgs'] = %w(git emacs)
 
+default['timezone_iii']['timezone'] = "Asia/Shanghai"
+
 default['nginx']['default_site_enabled'] = false
 default['nginx']['default_root'] = '/vagrant/src'
 

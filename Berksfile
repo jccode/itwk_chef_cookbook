@@ -3,6 +3,7 @@ source "https://api.berkshelf.com"
 
 
 cookbook 'apt', '~> 6.1.0'
+cookbook 'timezone_iii', '~> 1.0.3'
 #cookbook 'nginx_conf', '~> 2.0.0'
 cookbook 'chef_nginx', '~> 6.0.1'
 #cookbook 'nginx', '~> 2.7.6'

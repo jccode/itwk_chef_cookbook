@@ -30,6 +30,9 @@ node['pkgs'].each do |pkg|
   package pkg
 end
 
+# timezone
+include_recipe 'timezone_iii::default'
+
 # php
 include_recipe 'php::default'
 

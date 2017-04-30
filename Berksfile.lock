@@ -5,6 +5,7 @@ DEPENDENCIES
   mysql (~> 8.3.1)
   mysql2_chef_gem (~> 2.0.1)
   php (~> 4.0.0)
+  timezone_iii (~> 1.0.3)
 
 GRAPH
   apt (6.1.0)
@@ -51,6 +52,7 @@ GRAPH
     compat_resource (>= 12.16.3)
   seven_zip (2.0.2)
     windows (>= 1.2.2)
+  timezone_iii (1.0.3)
   windows (3.0.5)
     ohai (>= 4.0.0)
   xml (3.1.1)
