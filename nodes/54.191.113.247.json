@@ -1,9 +1,8 @@
 {
   "run_list": [
-      "recipe[weike::sources_list]",
       "recipe[weike]"
   ],
   "automatic": {
-    "ipaddress": "127.0.0.1"
+    "ipaddress": "54.191.113.247"
   }
 }
