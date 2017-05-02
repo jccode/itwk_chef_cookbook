@@ -1,6 +1,8 @@
 {
   "run_list": [
+      "recipe[weike::code]",
       "recipe[weike]"
+      // "recipe[weike::php]"
   ],
   "automatic": {
     "ipaddress": "54.191.113.247"

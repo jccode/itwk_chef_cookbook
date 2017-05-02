@@ -1,11 +1,19 @@
 from fabric.api import env, local, task, run, put, sudo
 
-def remote_server():
+# Usage:
+#
+#   fab vagrant uname
+#   fab server uname
+# 
+
+@task
+def server():
     env.user = 'ubuntu'
     env.hosts = [ '54.191.113.247' ]   #
     env.port = 22
     env.key_filename = '~/.ssh/myaws.pem'
 
+@task
 def vagrant():
     """USAGE:
     fab vagrant uname
@@ -50,4 +58,4 @@ def bootstrap():
 
 # Setup env
 #vagrant()
-remote_server()
+#server()

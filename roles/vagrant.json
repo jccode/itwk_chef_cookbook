@@ -1,0 +1,20 @@
+{
+    "name": "vagrant",
+    "default_attributes": {
+        "mysql": {
+            "db_file": "/vagrant/db/mweike.sql"
+        },
+        "nginx": {
+            "default_root": "/vagrant/src"
+        }
+    },
+    "override_attributes": { },
+    "json_class": "Chef::Role",
+    "description": "This is just a test role, no big deal.",
+    "chef_type": "role",
+    "run_list": [
+        "recipe[weike::sources_list]",
+        "recipe[weike]"
+        // "recipe[weike::debug]"
+    ]
+}

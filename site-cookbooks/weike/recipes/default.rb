@@ -19,18 +19,7 @@ end
 # timezone
 include_recipe 'timezone_iii::default'
 
-# php
-include_recipe 'php::default'
-
-# Install a FPM pool named "default"
-php_fpm_pool "default" do
-  action :install
-end
-
-node['php']['modules'].each do |mod|
-  package mod
-end
-
+include_recipe 'weike::php'
 
 # nginx
 include_recipe 'chef_nginx::default'
@@ -46,7 +35,7 @@ end
 # Create service
 mysql_service 'mweike' do
   port '3306'
-  version '5.5'
+  # version '5.5'
   initial_root_password node['mysql']['root_password']
   action [:create, :start]
 end
