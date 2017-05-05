@@ -9,7 +9,8 @@ from fabric.api import env, local, task, run, put, sudo
 @task
 def server():
     env.user = 'ubuntu'
-    env.hosts = [ '54.191.113.247' ]   #
+    # 54.191.113.247 
+    env.hosts = [ '52.87.171.33' ]   #
     env.port = 22
     env.key_filename = '~/.ssh/myaws.pem'
 
