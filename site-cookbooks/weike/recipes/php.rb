@@ -39,4 +39,3 @@ end
 node['php']['modules'].each do |mod|
   package mod
 end
-

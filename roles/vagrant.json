@@ -6,6 +6,10 @@
         },
         "nginx": {
             "default_root": "/vagrant/src"
+        },
+        "php": {
+            "fpm_user": "vagrant",
+            "fpm_group": "vagrant"
         }
     },
     "override_attributes": { },
