@@ -5,6 +5,8 @@ default['timezone_iii']['timezone'] = "Asia/Shanghai"
 
 default['nginx']['default_site_enabled'] = false
 default['nginx']['default_root'] = '/var/www/weike'
+default['nginx']['access_log'] = 'itwk.access.log'
+default['nginx']['error_log'] = 'itwk.error.log'
 
 default['php']['version'] = "5.6.13"
 default['php']['modules'] = %w(php5-mysql php5-gd php5-fpm)

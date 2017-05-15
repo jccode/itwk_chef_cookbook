@@ -85,3 +85,16 @@ execute "initialize #{node['mysql']['dbname']} database" do
   command "mysql -h 127.0.0.1 -u root -p#{node['mysql']['root_password']} -D #{node['mysql']['db_name']} < #{node['mysql']['db_file']}"
   not_if  "mysql -h 127.0.0.1 -u root -p#{node['mysql']['root_password']} -D #{node['mysql']['db_name']} -e 'describe keke_witkey_task;'"
 end
+
+
+# add bashrc_local
+template "#{ENV['HOME']}/.bashrc_local" do
+  source 'bashrc_local.erb'
+  mode 00644
+end
+
+# update bashrc
+append_if_no_line "add bashrc_local" do
+  path "#{ENV['HOME']}/.bashrc"
+  line "if [ -f ~/.bashrc_local ]; then . ~/.bashrc_local; fi"
+end

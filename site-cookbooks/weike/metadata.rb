@@ -16,3 +16,5 @@ depends 'php', '~> 4.0.0'
 
 depends 'mysql2_chef_gem', '~> 2.0.1'
 depends 'database', '~> 6.1.1'
+
+depends 'line', '~> 0.6.3'

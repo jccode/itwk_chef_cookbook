@@ -1,0 +1,4 @@
+
+export APPDIR=<%= node['nginx']['default_root'] %>
+export ACCESSLOG=<%= node['nginx']['log_dir'] %>/<%= node['nginx']['access_log'] %>
+export ERRORLOG=<%= node['nginx']['log_dir'] %>/<%= node['nginx']['error_log'] %>
