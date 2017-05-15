@@ -9,10 +9,10 @@ from fabric.api import env, local, task, run, put, sudo
 @task
 def server():
     env.user = 'ubuntu'
-    # 54.191.113.247 
-    env.hosts = [ '52.87.171.33' ]   #
+    # 54.191.113.247, '~/.ssh/myaws.pem'
+    env.hosts = [ '54.161.64.130' ]   #
     env.port = 22
-    env.key_filename = '~/.ssh/myaws.pem'
+    env.key_filename = '~/.ssh/aws-ubuntu1404.pem'
 
 @task
 def vagrant():

@@ -25,18 +25,18 @@ if node['platform'] == 'ubuntu' and node['platform_version'].to_f == 16.04
   
 end
 
-log node['php']['packages']
+# log node['php']['packages']
 
 
-# # php
-# include_recipe 'php::default'
+# php
+include_recipe 'php::default'
 
-# # Install a FPM pool named "default"
-# php_fpm_pool "default" do
-#   action :install
-# end
+# Install a FPM pool named "default"
+php_fpm_pool "default" do
+  action :install
+end
 
-# node['php']['modules'].each do |mod|
-#   package mod
-# end
+node['php']['modules'].each do |mod|
+  package mod
+end
 

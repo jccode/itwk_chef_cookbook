@@ -15,8 +15,17 @@ git node['nginx']['default_root'] do
   action :sync
 end
 
-directory "#{node['nginx']['default_root']}/data" do
-  owner node['nginx']['user']
-  group node['nginx']['group']
-  mode '0777'
+
+# Create neccessary folder & files
+%w[ data data/session data/tpl_c data/adpic data/avatar data/tmp data/uploads ].each do |path|
+  directory "#{node['nginx']['default_root']}/#{path}" do
+    owner node['nginx']['user']
+    group node['nginx']['group']
+    mode '0777'
+  end
+end
+
+file "#{node['nginx']['default_root']}/data/keke_kppw_install.lck" do
+  content "1038d149ef80073a86ef4644f33479d7_keke_install.lck"
+  action :create
 end
